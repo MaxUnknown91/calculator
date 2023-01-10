@@ -262,6 +262,10 @@ export default {
     });
     this.$emit('medicalHistoryItems', this.items)
   },
+
+  updated() {
+    this.$emit('medicalPoints', this.count)
+  }
   
 };
 </script>

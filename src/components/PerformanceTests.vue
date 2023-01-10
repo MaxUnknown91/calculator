@@ -15,6 +15,7 @@
           type="checkbox"
           @change="(isActive = !isActive), checkSection()"
         />
+        <label for="" class="ms-2"> Abiilita sezione</label>
         <input
           type="range"
           class="form-range"
@@ -23,10 +24,15 @@
           step="1"
           :value="valoreScelto"
           id="myRange"
+          list="myRangeValues"
           @input="(valoreScelto = $event.target.value), inputValueMSE($event)"
           :disabled="!isActive"
         />
-        <div>Risultato MSE: {{ valoreScelto }}</div>
+        <div class="d-flex justify-content-between">
+          <div>{{ minor }}</div>
+          <div>{{ valoreScelto }}</div>
+          <div>30</div>
+        </div>
         <div>Punti: {{ MSEresult }}</div>
       </div>
       <div class="col-5">
@@ -34,7 +40,7 @@
         <input
           type="checkbox"
           @change="(isActiveTwo = !isActiveTwo), checkSection()"
-        />
+        /><label for="" class="ms-2"> Abiilita sezione</label>
         <div>
           <font-awesome-icon
             class="btn btn-sm"
@@ -56,49 +62,54 @@
           />
         </div>
         <div v-if="maleOrFemale == true">
-          Cutoff Maschile
-          <font-awesome-icon
+          {{ cutoffMaschile }}
+          <button
             class="btn btn-sm"
-            :class="maleCheck ? 'btn-success' : 'btn-outline-success'"
-            icon="check"
+            :class="maleCheck ? 'btn-danger' : 'btn-outline-danger'"
             @click="
               (maleCheck = true),
-                (handgripResult = 0.27),
+                (handgripResult = 1),
                 (this.femaleCheck = null)
             "
-          />
-          <font-awesome-icon
+          >
+            Si
+          </button>
+          <button
             class="btn btn-sm"
             :class="
               maleCheck == null || maleCheck == true
-                ? 'btn-outline-danger'
-                : 'btn-danger'
+                ? 'btn-outline-success'
+                : 'btn-success'
             "
-            icon="xmark"
             @click="
               (maleCheck = false),
                 (handgripResult = 0),
                 (this.femaleCheck = null)
             "
-          />
+          >
+            No
+          </button>
         </div>
         <div v-if="maleOrFemale == false">
-          Cutoff Femminile<font-awesome-icon
+          {{ cutoffFemminile }}
+          <button
             class="btn btn-sm"
-            :class="femaleCheck ? 'btn-success' : 'btn-outline-success'"
+            :class="femaleCheck ? 'btn-danger' : 'btn-outline-danger'"
             icon="check"
             @click="
               (femaleCheck = true),
-                (handgripResult = 0.16),
+                (handgripResult = 1),
                 (this.maleCheck = null)
             "
-          />
-          <font-awesome-icon
+          >
+            Si
+          </button>
+          <button
             class="btn btn-sm"
             :class="
               femaleCheck == null || femaleCheck == true
-                ? 'btn-outline-danger'
-                : 'btn-danger'
+                ? 'btn-outline-success'
+                : 'btn-success'
             "
             icon="xmark"
             @click="
@@ -106,7 +117,9 @@
                 (handgripResult = 0),
                 (this.maleCheck = null)
             "
-          />
+          >
+            No
+          </button>
         </div>
         <div>Risultato Handgrip: {{ handgripResult }}</div>
         <div>Sesso: {{ sexCheck() }}</div>
@@ -134,6 +147,10 @@ export default {
       femaleCheck: null,
       isActiveTwo: false,
       handgripResult: 0,
+      minor: "<= 18",
+      totalResult: 0,
+      cutoffFemminile: "<= 16kg",
+      cutoffMaschile: "<= 27kg",
     };
   },
   methods: {
@@ -164,17 +181,20 @@ export default {
       switch (true) {
         case this.isActive && this.isActiveTwo:
           this.items = 2;
+          this.$emit("PerformanceItems", this.items);
           break;
         case this.isActive && !this.isActiveTwo:
           this.items = 1;
           this.maleCheck = null;
           this.femaleCheck = null;
           this.handgripResult = 0;
+          this.$emit("PerformanceItems", this.items);
           break;
         case !this.isActive && this.isActiveTwo:
           this.items = 1;
           this.MSEresult = 0;
           this.maleOrFemale = null;
+          this.$emit("PerformanceItems", this.items);
           break;
         case !this.isActive && !this.isActive:
           this.items = 0;
@@ -183,21 +203,25 @@ export default {
           this.maleCheck = null;
           this.femaleCheck = null;
           this.handgripResult = 0;
+          this.$emit("PerformanceItems", this.items);
           break;
       }
     },
     sexCheck: function () {
       switch (this.maleOrFemale) {
         case true:
-          return 'Uomo'
+          return "Uomo";
         case false:
-          return 'Donna'
+          return "Donna";
         default:
-          return ''
+          return "";
       }
     },
   },
-
+  updated() {
+    this.totalResult = this.MSEresult + this.handgripResult;
+    this.$emit("performancePoints", this.totalResult);
+  },
 };
 </script>
 

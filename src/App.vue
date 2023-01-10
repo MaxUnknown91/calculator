@@ -1,5 +1,5 @@
 <template>
-<h1>Questionario</h1>
+<h1>Frailty Index - Geriatria</h1>
 <TotalRecap/>
 </template>
 

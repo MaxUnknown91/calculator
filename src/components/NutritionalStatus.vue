@@ -4,70 +4,71 @@
       <ItemRecap
         v-model:firstResult="points"
         v-model:selectedItems="items"
-        sectionTitle="Performance Tests"
+        sectionTitle="Nutritional Status"
       />
     </div>
     <div class="row">
       <div class="col-4">
         Weight loss > 10lbs in past year
-        <font-awesome-icon
+        <button
           class="btn btn-sm"
           :class="firstElement ? 'btn-success' : 'btn-outline-success'"
-          icon="check"
           @click="(firstElement = true), (firstElementPoints = 1), pointsSum()"
-        />
-        <font-awesome-icon
+        >
+          No
+        </button>
+        <button
           class="btn btn-sm"
           :class="
             firstElement == null || firstElement == true
               ? 'btn-outline-danger'
               : 'btn-danger'
           "
-          icon="xmark"
+
           @click="(firstElement = false), (firstElementPoints = 0), pointsSum()"
-        />
+        >Yes </button>
       </div>
       <div class="col-4">
-        Body mass index major than 21kg/m<sup>²</sup>
-        <font-awesome-icon
+        Body mass index minor than 21kg/m<sup>²</sup>
+        <button
           class="btn btn-sm"
           :class="secondElement ? 'btn-success' : 'btn-outline-success'"
-          icon="check"
+
           @click="
             (secondElement = true), (secondElementPoints = 1), pointsSum()
           "
-        />
-        <font-awesome-icon
+        >No </button>
+        <button
           class="btn btn-sm"
           :class="
             secondElement == null || secondElement == true
               ? 'btn-outline-danger'
               : 'btn-danger'
           "
-          icon="xmark"
+
           @click="
             (secondElement = false), (secondElementPoints = 0), pointsSum()
           "
-        />
+        >Yes </button>
       </div>
       <div class="col-4">
-        Serum albumin major than 3.5 g/L
-        <font-awesome-icon
+        Serum albumin minor than 3.5 g/L
+        <button
           class="btn btn-sm"
           :class="thirdElement ? 'btn-success' : 'btn-outline-success'"
-          icon="check"
+
           @click="(thirdElement = true), (thirdElementPoints = 1), pointsSum()"
-        />
-        <font-awesome-icon
+        >No </button>
+        <button
           class="btn btn-sm"
           :class="
             thirdElement == null || thirdElement == true
               ? 'btn-outline-danger'
               : 'btn-danger'
           "
-          icon="xmark"
+
           @click="(thirdElement = false), (thirdElementPoints = 0), pointsSum()"
-        />
+        >Yes </button>
       </div>
     </div>
   </div>
@@ -100,6 +101,12 @@ export default {
         this.thirdElementPoints);
     },
   },
+  mounted() {
+    this.$emit("nutritionalItems", this.items);
+  },
+  updated() {
+    this.$emit('nutritionalPoints', this.points)
+  }
 };
 </script>
 

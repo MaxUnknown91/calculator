@@ -65,7 +65,7 @@
       </div>
 
       <div class="col-4">
-        <h4>Nagi & Rosow-Breslau Activities</h4>
+        <h4>Ulteriori items da definire</h4>
         <div
           class="form-check"
           v-for="medical in medicals.slice(14, 22)"
@@ -181,42 +181,42 @@ export default {
         },
         {
           id: 14,
-          title: "TBC",
+          title: "Da decidere",
           tooltip: "Tooltip",
         },
         {
           id: 15,
-          title: "TBC",
+          title: "Da decidere",
           tooltip: "Tooltip",
         },
         {
           id: 16,
-          title: "TBC",
+          title: "Da decidere",
           tooltip: "Tooltip",
         },
         {
           id: 17,
-          title: "TBC",
+          title: "Da decidere",
           tooltip: "Tooltip",
         },
         {
           id: 18,
-          title: "TBC",
+          title: "Da decidere",
           tooltip: "Sensory impairment is a type of motherfucker bitch",
         },
         {
           id: 19,
-          title: "TBC",
+          title: "Da decidere",
           tooltip: "Tooltip",
         },
         {
           id: 20,
-          title: "TBC",
+          title: "Da decidere",
           tooltip: "Tooltip",
         },
         {
           id: 21,
-          title: "TBC",
+          title: "Da decidere",
           tooltip: "Tooltip",
         },
       ],
@@ -266,6 +266,10 @@ export default {
     });
     this.$emit('functionalStateItems', this.items)
   },
+
+  updated() {
+    this.$emit('functionalPoints', this.count)
+  }
 };
 </script>
 
