@@ -7,13 +7,13 @@
         sectionTitle="Medical History"
       />
       <div class="col-12 mb-3">
-        <div>Selezionate: {{ count }} / 21</div>
+        <div>Index {{ count }} / 25 = {{ count / 25 }}</div>
         <div>Quali: {{ selected }}</div>
       </div>
       <div class="col-4">
         <div
           class="form-check"
-          v-for="medical in medicals.slice(0, 7)"
+          v-for="medical in medicals.slice(0, 9)"
           :key="medical.id"
         >
           <input
@@ -39,7 +39,7 @@
       <div class="col-4">
         <div
           class="form-check"
-          v-for="medical in medicals.slice(7, 14)"
+          v-for="medical in medicals.slice(9, 18)"
           :key="medical.id"
         >
           <input
@@ -65,7 +65,7 @@
       <div class="col-4">
         <div
           class="form-check"
-          v-for="medical in medicals.slice(14, 21)"
+          v-for="medical in medicals.slice(18, 25)"
           :key="medical.id"
         >
           <input
@@ -108,139 +108,165 @@ export default {
       medicals: [
         {
           id: 0,
-          title: "Angina",
-          tooltip: "Angina is a type of motherfucker bitch",
+          title: "Cognitive impairment or dementia",
+          tooltip: "",
         },
         {
           id: 1,
-          title: "Anxiety disorder",
-          tooltip: "Anxiety disorder is a type of motherfucker bitch",
+          title: "Severe disability",
+          tooltip: "",
         },
         {
           id: 2,
-          title: "Arthritis",
-          tooltip: "Arthritis is a type of motherfucker bitch",
+          title: "Cerebrovascular disease",
+          tooltip: "",
         },
         {
           id: 3,
-          title: "Asthma",
-          tooltip: "Asthma is a type of motherfucker bitch",
+          title: "Solid neoplasm",
+          tooltip: "",
         },
         {
           id: 4,
-          title: "Atrial fibrillation/flutter",
-          tooltip:
-            "Atrial fibrillation/flutter is a type of motherfucker bitch",
+          title: "COPD, emphysema and chronic bronchitis",
+          tooltip: "",
         },
         {
           id: 5,
-          title: "Cancer within 5 years",
-          tooltip: "Cancer within 5 years is a type of motherfucker bitch",
+          title: "Ischemic heart disease",
+          tooltip: "",
         },
         {
           id: 6,
-          title: "Chronic kidney disease (eGFR<60)",
-          tooltip:
-            "Chronic kidney disease (eGFR<60) is a type of motherfucker bitch",
+          title: "Heart failure",
+          tooltip: "",
         },
         {
           id: 7,
-          title: "COPD",
-          tooltip: "COPD is a type of motherfucker bitch",
+          title: "Chronic kidney disease",
+          tooltip: "",
         },
         {
           id: 8,
-          title: "Coronary artery disease",
-          tooltip: "Coronary artery disease is a type of motherfucker bitch",
+          title: "Atrial fibrillation",
+          tooltip: "",
         },
         {
           id: 9,
-          title: "Degenerative spine disease",
-          tooltip: "Degenerative spine disease is a type of motherfucker bitch",
+          title: "Parkinson's disease and parkinsonism",
+          tooltip: "",
         },
         {
           id: 10,
-          title: "Dementia",
-          tooltip: "Dementia is a type of motherfucker bitch",
+          title: "Previous hip fracture",
+          tooltip: "",
         },
         {
           id: 11,
-          title: "Depression",
-          tooltip: "Depression is a type of motherfucker bitch",
+          title: "Anemia",
+          tooltip: "",
         },
         {
           id: 12,
-          title: "Diabetes",
-          tooltip: "Diabetes is a type of motherfucker bitch",
+          title: "Partial/total financial support for medical expenses",
+          tooltip: "",
         },
         {
           id: 13,
-          title: "Fall within the past year",
-          tooltip: "Fall within the past year is a type of motherfucker bitch",
+          title: "Oxygen prescription in the last 6 months",
+          tooltip: "",
         },
         {
           id: 14,
-          title: "Heart failure",
-          tooltip: "Heart failure is a type of motherfucker bitch",
+          title: "Any hospital overnight staying in the last 6 months",
+          tooltip: "",
         },
         {
           id: 15,
-          title: "Hypertension",
-          tooltip: "Hypertension is a type of motherfucker bitch",
+          title: "Chronic ulcers of the skin",
+          tooltip: "",
         },
         {
           id: 16,
-          title: "Myocardial infarction",
-          tooltip: "Myocardial infarction is a type of motherfucker bitch",
+          title: "Bradycardias and rhythm conduction disorders",
+          tooltip: "",
         },
         {
           id: 17,
-          title: "Peripheral vascular disease",
+          title: "Other neurological diseases*",
           tooltip:
-            "Peripheral vascular disease is a type of motherfucker bitch",
+            "This category includes among others: paraplegia, chorea, cerebellar degeneration, Duchenne palsy, sequelae of meningitis, unspecific neuro-myopathy, familiar palsy, ataxia, dystonia, cerebral stenosis,several congenital malformations of the nervous system.",
         },
         {
           id: 18,
-          title: "Sensory impairment",
-          tooltip: "Sensory impairment is a type of motherfucker bitch",
+          title: "Constipation",
+          tooltip: "",
         },
         {
           id: 19,
-          title: "Stroke/TIA",
-          tooltip: "Stroke/TIA is a type of motherfucker bitch",
+          title: "Prescription of LMWH in the last 6 months",
+          tooltip: "",
         },
         {
           id: 20,
-          title: "Use of >=5 prescription drugs",
+          title: "Peripheral vascular diseases",
           tooltip:
-            "Use of >=5 prescription drugs is a type of motherfucker bitch",
+            "",
+        },
+        {
+          id: 21,
+          title: "Nutritional problems",
+          tooltip:
+            "",
+        },
+        {
+          id: 22,
+          title: "Diabetes",
+          tooltip:
+            "",
+        },
+        {
+          id: 23,
+          title: "Schizophrenia and other delusional diseases",
+          tooltip:
+            "",
+        },
+        {
+          id: 24,
+          title: "Edema",
+          tooltip:
+            "",
         },
       ],
       oldmedicals: [
-        "Angina",
-        "Anxiety disorder",
-        "Arthritis",
-        "Asthma",
-        "Atrial fibrillation/flutter",
-        "Cancer within 5 years",
-        "Chronic kidney disease (eGFR<60)",
-        "COPD",
-        "Coronary artery disease",
-        "Degenerative spine disease",
-        "Dementia",
-        "Depression",
-        "Diabetes",
-        "Fall within the past year",
+        "Cognitive impairment or dementia",
+        "Severe disability",
+        "Cerebrovascular disease",
+        "Solid neoplasm",
+        "COPD, emphysema and chronic bronchitis",
+        "Ischemic heart disease",
         "Heart failure",
-        "Hypertension",
-        "Myocardial infarction",
-        "Peripheral vascular disease",
-        "Sensory impairment",
-        "Stroke/TIA",
-        "Use of >=5 prescription drugs",
+        "Chronic kidney disease",
+        "Atrial fibrillation",
+        "Parkinson's disease and parkinsonism",
+        "Previous hip fracture",
+        "Anemia",
+        "Partial/total financial support for medical expenses",
+        "Oxygen prescription in the last 6 months",
+        "Any hospital overnight staying in the last 6 months",
+        "Chronic ulcers of the skin",
+        "Bradycardias and rhythm conduction disorders",
+        "Other neurological diseases*",
+        "Constipation",
+        "Prescription of LMWH in the last 6 months",
+        "Peripheral vascular diseases",
+        "Nutritional problems",
+        "Diabetes",
+        "Schizophrenia and other delusional diseases",
+        "Edema",
       ],
       selected: [],
-      items: 21,
+      items: 25,
     };
   },
 
@@ -260,13 +286,12 @@ export default {
     new Tooltip(document.body, {
       selector: "[data-bs-toggle='tooltip']",
     });
-    this.$emit('medicalHistoryItems', this.items)
+    this.$emit("medicalHistoryItems", this.items);
   },
 
   updated() {
-    this.$emit('medicalPoints', this.count)
-  }
-  
+    this.$emit("medicalPoints", this.count);
+  },
 };
 </script>
 

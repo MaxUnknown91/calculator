@@ -3,7 +3,7 @@
     @medicalHistoryItems="getItems"
     @medicalPoints="getMedicalPoints"
   />
-  <FunctionalState
+<!--   <FunctionalState
     @functionalStateItems="getItems"
     @functionalPoints="getFunctionalPoints"
   />
@@ -30,23 +30,23 @@
         <div class="col-4">CGA-FI (range 0.0-1.0): {{ getCGA() }}</div>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>
 import MedicalHistory from "./MedicalHistory.vue";
-import FunctionalState from "./FunctionalState.vue";
-import PerformanceTests from "./PerformanceTests.vue";
-import NutritionalStatus from "./NutritionalStatus.vue";
+// import FunctionalState from "./FunctionalState.vue";
+// import PerformanceTests from "./PerformanceTests.vue";
+// import NutritionalStatus from "./NutritionalStatus.vue";
 
 export default {
   name: "TotalRecap",
 
   components: {
     MedicalHistory,
-    FunctionalState,
-    PerformanceTests,
-    NutritionalStatus,
+    // FunctionalState,
+    // PerformanceTests,
+    // NutritionalStatus,
   },
 
   data() {
