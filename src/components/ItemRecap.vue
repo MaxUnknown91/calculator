@@ -1,7 +1,7 @@
 <template>
-  <div class="col-12 bg-dark-subtle">
+  <div class="col-12 text-bg-success bg-gradient rounded-top py-2">
     <div>
-      {{ sectionTitle }} Result: {{ sumOfResults() }} / {{ selectedItems }}
+      Selezionati: {{ sumOfResults() }} / {{ selectedItems }} = {{sumOfResults() / selectedItems}}
     </div>
   </div>
 </template>

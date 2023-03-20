@@ -1,17 +1,25 @@
 <template>
-<h1>Frailty Index - Geriatria</h1>
-<TotalRecap/>
+  <div class="mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="display-4">Frailty Index</div>
+        </div>
+      </div>
+    </div>
+    <TotalRecap />
+  </div>
 </template>
 
 <script>
-import TotalRecap from './components/TotalRecap.vue'
+import TotalRecap from "./components/TotalRecap.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     TotalRecap,
-  }
-}
+  },
+};
 </script>
 
 <style>

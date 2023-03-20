@@ -1,94 +1,98 @@
 <template>
-  <div class="container mt-3 bg-body-secondary">
+  <div class="container mt-3">
     <div class="row">
       <ItemRecap
         v-model:firstResult="count"
         v-model:selectedItems="items"
         sectionTitle="Medical History"
       />
-      <div class="col-12 mb-3">
-        <div>Index {{ count }} / 25 = {{ count / 25 }}</div>
-        <div>Quali: {{ selected }}</div>
-      </div>
-      <div class="col-4">
-        <div
-          class="form-check"
-          v-for="medical in medicals.slice(0, 9)"
-          :key="medical.id"
-        >
-          <input
-            class="form-check-input"
-            type="checkbox"
-            :value="medical.id"
-            :id="medical.id"
-            @click="addSelected($event, medical.title)"
-          />
-          <label
-            class="form-check-label"
-            :for="medical.id"
-            data-bs-toggle="tooltip"
-            data-bs-placement="right"
-            data-bs-custom-class="custom-tooltip"
-            :data-bs-title="medical.tooltip"
-          >
-            {{ medical.title }}
-          </label>
-        </div>
-      </div>
-
-      <div class="col-4">
-        <div
-          class="form-check"
-          v-for="medical in medicals.slice(9, 18)"
-          :key="medical.id"
-        >
-          <input
-            class="form-check-input"
-            type="checkbox"
-            :value="medical.id"
-            :id="medical.id"
-            @click="addSelected($event, medical.title)"
-          />
-          <label
-            class="form-check-label"
-            :for="medical.id"
-            data-bs-toggle="tooltip"
-            data-bs-placement="right"
-            data-bs-custom-class="custom-tooltip"
-            :data-bs-title="medical.tooltip"
-          >
-            {{ medical.title }}
-          </label>
-        </div>
-      </div>
-
-      <div class="col-4">
-        <div
-          class="form-check"
-          v-for="medical in medicals.slice(18, 25)"
-          :key="medical.id"
-        >
-          <input
-            class="form-check-input"
-            type="checkbox"
-            :value="medical.id"
-            :id="medical.id"
-            @click="addSelected($event, medical.title)"
-          />
-          <label
-            class="form-check-label"
-            :for="medical.id"
-            data-bs-toggle="tooltip"
-            data-bs-placement="right"
-            data-bs-custom-class="custom-tooltip"
-            :data-bs-title="medical.tooltip"
-          >
-            {{ medical.title }}
-          </label>
-        </div>
-      </div>
     </div>
   </div>
+  <div
+    class="container bg-light bg-gradient border border-success rounded-bottom"
+  >
+    <div class="row my-4">
+      <div class="col-12">
+        <!-- <div>Quali: {{ selected }}</div> -->
+      </div>
+      <div class="col-12 col-md-6">
+        <div
+          class="form-check"
+          v-for="medical in medicals.slice(0, 13)"
+          :key="medical.id"
+        >
+          <input
+            class="form-check-input"
+            type="checkbox"
+            :value="medical.id"
+            :id="medical.id"
+            @click="addSelected($event, medical.title)"
+          />
+          <label
+            class="form-check-label"
+            :for="medical.id"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            data-bs-custom-class="custom-tooltip"
+            :data-bs-title="medical.tooltip"
+          >
+            {{ medical.title }}
+          </label>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div
+          class="form-check"
+          v-for="medical in medicals.slice(13,25)"
+          :key="medical.id"
+        >
+          <input
+            class="form-check-input"
+            type="checkbox"
+            :value="medical.id"
+            :id="medical.id"
+            @click="addSelected($event, medical.title)"
+          />
+          <label
+            class="form-check-label"
+            :for="medical.id"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            data-bs-custom-class="custom-tooltip"
+            :data-bs-title="medical.tooltip"
+          >
+            {{ medical.title }}
+          </label>
+        </div>
+      </div>
+      <!-- <div class="col-4 ">
+        <div
+          class="form-check"
+          v-for="medical in medicals.slice(16, 25)"
+          :key="medical.id"
+        >
+          <input
+            class="form-check-input"
+            type="checkbox"
+            :value="medical.id"
+            :id="medical.id"
+            @click="addSelected($event, medical.title)"
+          />
+          <label
+            class="form-check-label"
+            :for="medical.id"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            data-bs-custom-class="custom-tooltip"
+            :data-bs-title="medical.tooltip"
+          >
+            {{ medical.title }}
+          </label>
+        </div>
+      </div> -->
+    </div>
+  </div>
+  
 </template>
 
 <script>
@@ -210,32 +214,27 @@ export default {
         {
           id: 20,
           title: "Peripheral vascular diseases",
-          tooltip:
-            "",
+          tooltip: "",
         },
         {
           id: 21,
           title: "Nutritional problems",
-          tooltip:
-            "",
+          tooltip: "",
         },
         {
           id: 22,
           title: "Diabetes",
-          tooltip:
-            "",
+          tooltip: "",
         },
         {
           id: 23,
           title: "Schizophrenia and other delusional diseases",
-          tooltip:
-            "",
+          tooltip: "",
         },
         {
           id: 24,
           title: "Edema",
-          tooltip:
-            "",
+          tooltip: "",
         },
       ],
       oldmedicals: [
