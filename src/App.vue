@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div class="display-4">(PC- FI)</div>
+          <div class="display-4">Frailty Index (PC-FI)</div>
         </div>
       </div>
     </div>
