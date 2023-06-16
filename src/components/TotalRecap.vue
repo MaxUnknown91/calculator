@@ -63,6 +63,13 @@ export default {
     };
   },
 
+  props: {
+    langChoice: {
+      type: Boolean,
+      default: false,
+    }
+  },
+
   methods: {
     getItems: function (el) {
       this.sentItems = this.sentItems + el;
