@@ -2,6 +2,7 @@
   <MedicalHistory
     @medicalHistoryItems="getItems"
     @medicalPoints="getMedicalPoints"
+    :langChoice = langChoice
   />
 <!--   <FunctionalState
     @functionalStateItems="getItems"
@@ -79,6 +80,7 @@ export default {
     },
     getMedicalPoints: function (el) {
       this.medicalPoints = el;
+      console.log(this.langChoice)
     },
     getFunctionalPoints: function (el) {
       this.functionalPoints = el;

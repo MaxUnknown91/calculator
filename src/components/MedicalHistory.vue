@@ -36,7 +36,7 @@
             data-bs-custom-class="custom-tooltip"
             :data-bs-title="medical.tooltip"
           >
-            {{ medical.title }}
+            {{ this.langChoice == true ? medical.title : medical.titleIta }}
           </label>
         </div>
       </div>
@@ -61,7 +61,7 @@
             data-bs-custom-class="custom-tooltip"
             :data-bs-title="medical.tooltip"
           >
-            {{ medical.title }}
+            {{ this.langChoice == true ? medical.title : medical.titleIta }}
           </label>
         </div>
       </div>
@@ -106,6 +106,13 @@ export default {
     ItemRecap,
   },
 
+  props: {
+    langChoice: {
+      type: Boolean,
+      default: false,
+    }
+  },
+
   data() {
     return {
       count: 0,
@@ -113,128 +120,130 @@ export default {
         {
           id: 0,
           title: "Cognitive impairment or dementia",
-          tooltip: "",
+          titleIta: "Compromissione cognitiva o demenza"
+          
         },
         {
           id: 1,
           title: "Severe disability",
-          tooltip: "",
+          titleIta: "Disabilità grave"
         },
         {
           id: 2,
           title: "Cerebrovascular disease",
-          tooltip: "",
+          titleIta: "Malattia cerebrovascolare"
         },
         {
           id: 3,
           title: "Solid neoplasm",
-          tooltip: "",
+          titleIta: "Neoplasia solida"
         },
         {
           id: 4,
           title: "COPD, emphysema and chronic bronchitis",
-          tooltip: "",
+          titleIta: "BPCO, enfisema e bronchite cronica"
         },
         {
           id: 5,
           title: "Ischemic heart disease",
-          tooltip: "",
+          titleIta: "Cardiopatia ischemica"
         },
         {
           id: 6,
           title: "Heart failure",
-          tooltip: "",
+          titleIta: "Insufficienza cardiaca"
         },
         {
           id: 7,
           title: "Chronic kidney disease",
-          tooltip: "",
+          titleIta: "Malattia renale cronica"
         },
         {
           id: 8,
           title: "Atrial fibrillation",
-          tooltip: "",
+          titleIta: "Fibrillazione atriale"
         },
         {
           id: 9,
           title: "Parkinson's disease and parkinsonism",
-          tooltip: "",
+          titleIta: "Morbo di Parkinson e parkinsonismo"
         },
         {
           id: 10,
           title: "Previous hip fracture",
-          tooltip: "",
+          titleIta: "Precedente frattura dell'anca"
         },
         {
           id: 11,
           title: "Anemia",
-          tooltip: "",
+          titleIta: "Anemia"
         },
         {
           id: 12,
           title: "Partial/total financial support for medical expenses",
-          tooltip: "",
+          titleIta: "Sostegno economico parziale/totale per le spese mediche"
         },
         {
           id: 13,
           title: "Oxygen prescription in the last 6 months",
-          tooltip: "",
+          titleIta: "Prescrizione di ossigeno negli ultimi 6 mesi"
         },
         {
           id: 14,
           title: "Any hospital overnight staying in the last 6 months",
-          tooltip: "",
+          titleIta: "Qualsiasi pernottamento in ospedale negli ultimi 6 mesi"
         },
         {
           id: 15,
           title: "Chronic ulcers of the skin",
-          tooltip: "",
+          titleIta: "Ulcere croniche della pelle"
         },
         {
           id: 16,
           title: "Bradycardias and rhythm conduction disorders",
-          tooltip: "",
+          titleIta: "Bradicardia della conduzione del ritmo"
         },
         {
           id: 17,
           title: "Other neurological diseases*",
+          titleIta: "Altre malattia neurologiche",
           tooltip:
             "This category includes among others: paraplegia, chorea, cerebellar degeneration, Duchenne palsy, sequelae of meningitis, unspecific neuro-myopathy, familiar palsy, ataxia, dystonia, cerebral stenosis,several congenital malformations of the nervous system.",
         },
         {
           id: 18,
           title: "Constipation",
-          tooltip: "",
+          titleIta: "Stipsi"
         },
         {
           id: 19,
           title: "Prescription of LMWH in the last 6 months",
-          tooltip: "",
+          titleIta: "Prescrizione di EBPM negli ultimi 6 mesi"
         },
         {
           id: 20,
           title: "Peripheral vascular diseases",
-          tooltip: "",
+          titleIta: "Malattia vaascolari periferiche"
         },
         {
           id: 21,
           title: "Nutritional problems",
-          tooltip: "",
+          titleIta: "Problemi nutrizionali"
         },
         {
           id: 22,
           title: "Diabetes",
-          tooltip: "",
+          titleIta: "Diabete"
         },
         {
           id: 23,
           title: "Schizophrenia and other delusional diseases",
-          tooltip: "",
+          titleIta: "Schizofrenia e altre malattie deliranti"
         },
         {
           id: 24,
           title: "Edema",
-          tooltip: "",
+          titleIta: "Edema"
         },
       ],
       oldmedicals: [

@@ -3,11 +3,12 @@
     <div class="container">
       <div class="row justify-content-between">
         <div class="col-6">
-          <div class="display-4">Frailty Index (PC-FI)</div>
+          <div class="display-4" v-if="lang==true">Frailty Index (PC-FI)</div>
+          <div class="display-4" v-else>Indice di fragilità (PC-FI)</div>
         </div>
         <div class="col-3 d-flex flex-column-reverse">
-          <div @click="lang=true">Eng</div>
-          <div @click="lang=false">Ita</div>
+          <div @click="lang=true"><img src="./assets/united-kingdom.png" alt="flag-uk" style="width:30px"></div>
+          <div @click="lang=false"><img src="./assets/italy.png" alt="flag-it" style="width:30px"></div>
         </div>
       </div>
     </div>
@@ -37,7 +38,7 @@ export default {
   },
   data() {
     return {
-      lang: true,
+      lang: false,
       calceEng: `Vetrano DL, Zucchelli A, Onder G, et al. Frailty detection among
               primary care older patients through the Primary Care Frailty Index
               (PC-FI). Sci Rep. 2023;13(1):3543. Published 2023 Mar 2.
