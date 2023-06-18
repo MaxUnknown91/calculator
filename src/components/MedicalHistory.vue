@@ -206,7 +206,7 @@ export default {
         {
           id: 17,
           title: "Other neurological diseases*",
-          titleIta: "Altre malattia neurologiche",
+          titleIta: "Altre malattie neurologiche",
           tooltip:
             "This category includes among others: paraplegia, chorea, cerebellar degeneration, Duchenne palsy, sequelae of meningitis, unspecific neuro-myopathy, familiar palsy, ataxia, dystonia, cerebral stenosis,several congenital malformations of the nervous system.",
         },
