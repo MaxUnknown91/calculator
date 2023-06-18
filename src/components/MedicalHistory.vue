@@ -120,7 +120,7 @@ export default {
         {
           id: 0,
           title: "Cognitive impairment or dementia",
-          titleIta: "Compromissione cognitiva o demenza"
+          titleIta: "Deficit cognitivo o demenza"
           
         },
         {
@@ -191,17 +191,17 @@ export default {
         {
           id: 14,
           title: "Any hospital overnight staying in the last 6 months",
-          titleIta: "Qualsiasi pernottamento in ospedale negli ultimi 6 mesi"
+          titleIta: "Ospedalizzazione negli ultimi 6 mesi"
         },
         {
           id: 15,
           title: "Chronic ulcers of the skin",
-          titleIta: "Ulcere croniche della pelle"
+          titleIta: "Ulcere croniche cutanee"
         },
         {
           id: 16,
           title: "Bradycardias and rhythm conduction disorders",
-          titleIta: "Bradicardia della conduzione del ritmo"
+          titleIta: "Bradicardia o alterazione del ritmo"
         },
         {
           id: 17,
@@ -223,7 +223,7 @@ export default {
         {
           id: 20,
           title: "Peripheral vascular diseases",
-          titleIta: "Malattia vaascolari periferiche"
+          titleIta: "Malattia vascolare periferica"
         },
         {
           id: 21,
@@ -238,7 +238,7 @@ export default {
         {
           id: 23,
           title: "Schizophrenia and other delusional diseases",
-          titleIta: "Schizofrenia e altre malattie deliranti"
+          titleIta: "Schizofrenia e altre malattie mentali"
         },
         {
           id: 24,
