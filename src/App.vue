@@ -43,7 +43,7 @@ export default {
               primary care older patients through the Primary Care Frailty Index
               (PC-FI). Sci Rep. 2023;13(1):3543. Published 2023 Mar 2.
               doi:10.1038/s41598-023-30350-3`,
-      calceIta: `Vetrano DL, Zucchelli A, Onder G, et al. rilevazione della fragilità tra i pazienti anziani dell'assistenza primaria attraverso il Primary Cafe Frailty Index
+      calceIta: `Vetrano DL, Zucchelli A, Onder G, et al. rilevazione della fragilità tra i pazienti anziani dell'assistenza primaria attraverso il Primary Care Frailty Index
               (PC-FI). Sci Rep. 2023;13(1):3543. Pubblicato il 2 Mar 2023.
               doi:10.1038/s41598-023-30350-3`,
     };
